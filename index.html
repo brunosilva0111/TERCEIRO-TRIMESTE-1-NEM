@@ -8,97 +8,250 @@
     <title>Meu Blog Tech</title>
 
     <style>
+
+        /* =========================
+           CONFIGURAÇÕES GERAIS
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #e8f0fe;
-            color: #222;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f7fb;
+            color: #1e293b;
         }
+
+
+        /* =========================
+           CABEÇALHO
+        ========================= */
 
         header {
-            background-color: #1e3a8a;
+            background: linear-gradient(135deg, #0f172a, #1d4ed8);
             color: white;
             text-align: center;
-            padding: 30px;
+            padding: 55px 20px;
         }
 
-        h1 {
-            color: #60a5fa;
-            font-size: 40px;
+        header h1 {
+            margin: 0;
+            font-size: 42px;
+            letter-spacing: 2px;
+            color: #ffffff;
         }
 
-        h2 {
+        header h2 {
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: normal;
             color: #bfdbfe;
         }
 
         header p {
-            max-width: 700px;
-            margin: 15px auto;
-            font-size: 18px;
-            line-height: 1.5;
+            max-width: 750px;
+            margin: 18px auto;
+            font-size: 17px;
+            line-height: 1.7;
+            color: #e0f2fe;
         }
+
+        header strong {
+            color: #60a5fa;
+        }
+
+
+        /* =========================
+           IMAGEM DO CABEÇALHO
+        ========================= */
 
         header img {
-            width: 300px;
-            height: 200px;
+            display: block;
+
+            width: min(90%, 500px);
+            aspect-ratio: 16 / 9;
+
             object-fit: cover;
-            border-radius: 15px;
-            margin-top: 20px;
+
+            margin: 30px auto 0;
+
+            border-radius: 18px;
+            border: 4px solid rgba(255, 255, 255, 0.8);
+
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
         }
+
+
+        /* =========================
+           ÁREA DO POST
+        ========================= */
 
         main {
+            width: min(90%, 850px);
+
+            margin: 45px auto;
+
             background-color: white;
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px #999;
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.10);
+
+            border-top: 5px solid #2563eb;
         }
 
-        h3 {
+
+        /* TÍTULO */
+
+        main h3 {
+            margin-top: 0;
+
+            font-size: 32px;
+
             color: #1d4ed8;
-            font-size: 30px;
         }
+
+
+        /* DATA */
+
+        main p:first-of-type {
+            color: #64748b;
+
+            font-size: 14px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* TEXTO */
 
         main p {
             font-size: 18px;
-            line-height: 1.6;
+
+            line-height: 1.8;
+
+            color: #475569;
         }
+
+
+        /* =========================
+           IMAGEM DO POST
+        ========================= */
 
         main img {
             display: block;
+
             width: 100%;
-            max-width: 700px;
-            height: 350px;
+
+            /*
+              Mantém uma proporção bonita
+              sem deformar a imagem.
+            */
+            aspect-ratio: 16 / 9;
+
             object-fit: cover;
-            margin: 20px auto;
-            border-radius: 15px;
+
+            margin: 30px auto 0;
+
+            border-radius: 16px;
+
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18);
+
+            transition: transform 0.3s ease;
         }
+
+
+        /* Efeito ao passar o mouse */
+
+        main img:hover {
+            transform: scale(1.02);
+        }
+
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        body::after {
+            content: "© 2026 - Meu Blog Tech | Bruno Silva";
+
+            display: block;
+
+            text-align: center;
+
+            background-color: #0f172a;
+
+            color: #94a3b8;
+
+            padding: 25px;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           CELULAR
+        ========================= */
 
         @media (max-width: 600px) {
 
-            h1 {
-                font-size: 28px;
+            header {
+                padding: 40px 15px;
+            }
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            header h2 {
+                font-size: 18px;
+            }
+
+            header p {
+                font-size: 16px;
             }
 
             header img {
-                width: 90%;
-                height: 180px;
+                width: 100%;
+                aspect-ratio: 16 / 9;
             }
 
             main {
-                margin: 15px;
-                padding: 20px;
+                width: 92%;
+
+                padding: 25px;
+
+                margin: 30px auto;
+            }
+
+            main h3 {
+                font-size: 26px;
+            }
+
+            main p {
+                font-size: 16px;
             }
 
             main img {
-                height: 220px;
+                aspect-ratio: 16 / 9;
             }
         }
+
     </style>
+
 </head>
 
+
 <body>
+
+
+    <!-- CABEÇALHO -->
 
     <header>
 
@@ -113,16 +266,21 @@
         </p>
 
         <p>
-            Nossas aulas acontecem sempre às <i>sextas-feiras</i> e eu tenho
-            amado as aulas de educação digital.
+            Nossas aulas acontecem sempre às
+            <i>sextas-feiras</i> e eu tenho amado as aulas
+            de educação digital.
         </p>
 
-        <!-- Imagem -->
+
         <img
             src="https://blog.ebaconline.com.br/blog/wp-content/uploads/2022/12/ffapu6nxbihe77kajjmeh-e1674740233107.png"
-            alt="Imagem sobre tecnologia">
+            alt="Imagem relacionada à tecnologia">
 
     </header>
+
+
+
+    <!-- CONTEÚDO -->
 
     <main>
 
@@ -133,15 +291,18 @@
         </p>
 
         <p>
-            Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de
-            programação e curiosidades da área de tecnologia.
+            Boas-vindas ao meu novo blog!
+            Aqui vou compartilhar dicas de programação
+            e curiosidades da área de tecnologia.
         </p>
+
 
         <img
             src="https://blog.ebaconline.com.br/blog/wp-content/uploads/2022/12/ffapu6nxbihe77kajjmeh-e1674740233107.png"
             alt="Imagem relacionada à programação">
 
     </main>
+
 
 </body>
 
